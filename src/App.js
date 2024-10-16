@@ -6,18 +6,24 @@ import news_banner_data from "./news_banner_data.json"
 function App(){             //FlatList mobile uygulamamda yoğun bir veri kullanmak istediğimde kullanacağım component, ekrana ne kadar çok veri kullanırsak     kullanalım uygulamayı yormadan kontrollu bir şekilde kullanıcı deneyimi için tasarlanmış özel bir module
   return(
   
-    <View>
-
-      <FlatList
-      data={news_data}
-      renderItem={({item}) => <NewsCard haberler={item}/>}
-      />
-   
-
+    <View style ={styles.container}>
+      <View>
+        <FlatList
+        data={news_data}
+        renderItem={({item}) => <NewsCard haberler={item}/>}
+        />
+      </View> 
     </View>
  
   )
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex:1,
+    backgroundColor: '#eceff1',
+  }
+})
 
 
   export default App;
